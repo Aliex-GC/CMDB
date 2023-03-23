@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书查询</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/query_result.css" />
+    <script src="../static/JavaScript/echarts.js"></script>
+    <script src="../static/JavaScript/jquery.js"></script>
+    <link rel="stylesheet" href="../static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <style>
+        body{
+                background: url(/../static/img/4.jpg) no-repeat ;
+                background-size: cover;
+                
+            }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                </button>
+
+                <a class="navbar-brand" href="#">查询结果</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+                    <li><a href="/index">返回主页</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <ul>
+            <li style="font-size: larger;">详细信息</li>
+        </ul>
+        <div class="rank-list">
+            <ol start="1">
+                {% for book in books %}
+                <li class="rank-item">
+                    <div class="num">{{book.i1}}</div>
+                    
+                    <div class="content">
+                        
+                        <div class="img">
+                            <a href="/query/book_details?id={{book.num}}" target="_blank">
+                                <div class="lazy-img cover">
+                                    <img src="../static/ddimage/dd/{{book.img}}">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="detail" >
+                            <span class="data-box">
+                                <i class="b-icon play"></i>书名：{{book.name}}</span>
+                                <br>
+                                <br>
+                                
+                            <span class="data-box">
+                                <i class="b-icon play"></i>销量：{{book.sales}}</span>
+                                 
+                                
+                                <br>
+                                <br>
+                            <span class="data-box">
+                                <i class="b-icon view"></i>ISBN：{{book.ISBN}}</span>
+                                <br>
+                                <br>
+                            <span class="data-box">
+                                <i class="b-icon author"></i>作者：{{book.author}}
+                                <br>
+                                <br>
+                            </span>
+                            <span class="data-box">
+                                <i class="b-icon view"></i>价格：{{book.price}}
+                                <br>
+                                <br>
+                            </span>
+                            <span class="data-box">
+                                <a class="special" href="{{book.website}}" target="_blank" style="text-decoration:none;color: #000;">来源：{{book.website}}
+                            </a>
+                            </span>
+                        </div>
+                        
+                        <a href="/query/collect?num={{book.num}}" >
+                            <span  style="float: right;font-size: 18px;margin-top: 60px;margin-right: 20px;" >{{book.hint}}</span>
+                        </a>
+                   
+
+                    </div><!---->
+            
+            </li>
+        {%endfor%}
+        </ol>
+    </div>
+    
+    <script src="../static/js/jquery-1.12.4.js"></script>
+    </div>
+    <div class="wrapper">
+        <span class="line"></span>
+        <span class="content">我是有底线的</span>
+        <span class="line"></span>
+    </div>
+</body>
+
+</html>

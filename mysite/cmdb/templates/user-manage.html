@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="../static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <style>
+        body{
+                background: url(/../static/img/4.jpg) no-repeat ;
+                background-size: cover;
+                
+            }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">图书管理系统后台用户管理</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/login">返回登录 <span class="sr-only">(current)</span></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+                <li><a href="/user-manage">尊敬的管理员，您好！</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" style="margin-bottom: 20px;">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" name="search" type="button">搜索</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+
+        <div>
+            <div class="panel panel-default">
+
+                <div class="panel-heading"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加用户</div>
+                <div class="panel-body">
+                    <form class="form-inline" method="post">
+                        <div class="form-group">
+                            <label class="required" for="id_username" >用户名:</label>
+                            <input type="text" class="form-control" name="username1" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="id_password">密码:</label>
+                            <input type="text" class="form-control" name="password" placeholder="请输入密码">
+                        </div>
+                        <input type="submit" name="adduser" class="btn btn-success" value="添加用户" />
+                        <a id="hint" style="color: crimson;">{{hint}}</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 用户列表
+            </div>
+            <div class="bs-example" data-example-id="hoverable-table">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>账号</th>
+                            <th>密码</th>
+                            <th>
+                                删除
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in users %}
+                        <tr>
+                            <th scope="row">{{obj.id}}</th>
+                            <td>{{obj.username}}</td>
+                            <td>{{obj.password}}</td>
+                            <td><a class="btn-danger btn-xs" href="/usermanage/delete/?id={{obj.id}}">删除</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    background: #fff;
+    border:0
+}
+ol{
+    width:1200px;
+}
+ol div{
+    float:left;
+}
+h1.book_name{
+    line-height: auto;
+    overflow: hidden;
+    color: #323232;
+    font-size: 36px;
+    margin: 0 auto;
+    font-family: "STHeiti";
+}
+a.book_price{
+    margin-top:50px;
+    color: #323232;
+}
+
+a.book_web{
+    text-decoration:none;
+    margin-top:50px;
+    color: #323232;
+}
+
+a.book_web:hover{
+    color: red;
+}
+.comment{
+    margin:0 auto;
+    width:1100px;
+    margin-left: 60px;
+}
+.comment .comment1{
+    font-size: 28px;
+    margin-top: 20px;
+}
+ .comment2{
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: 15%;
+    margin-right: 20%;
+}
+.img{
+    margin-left:150px;
+    border-radius: 7;
+    margin-top:15px;
+}
+.wrapper{
+    margin-top: 30px;
+    margin-left: 250px;
+    width: 1000px;
+    height: 80px;
+    line-height: 50px;
+    text-align: center;
+}
+.line{
+    display: inline-block;
+    width: 300px;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    vertical-align: middle;
+}
+.info{
+    margin-left:100px;
+    margin-top:15px;
+    font-size:22px;
+    width:500px;
+    background-color: #dae1f5;
+    border-radius: 7;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+h1{
+    color:red;
+    font-size:25px;
+    
+}
+h4{
+    margin:0 auto;
+    font-size:15px;
+    font-weight:normal;
+    margin: 0.1em 0 .5em 0;
+    padding-bottom: 1px;
+}

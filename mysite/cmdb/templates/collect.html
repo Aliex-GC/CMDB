@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <link rel="stylesheet" href="../static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <style>
+        body{
+                background: url(/../static/img/4.jpg) no-repeat ;
+                background-size: cover;
+                
+            }
+        img{
+            display: inline-block;
+            width: 80px;
+            height:80px
+        }
+        a:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                </button>
+
+                <a class="navbar-brand" href="#">我的收藏</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+                    <li><a href="/index">返回主页</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        
+
+        <div>     
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 收藏列表
+            </div>
+            <div class="bs-example" data-example-id="hoverable-table">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>图片</th>
+                            <th>书名</th>
+                            <th>书号</th>
+                            <th>作者</th>
+                            <th>价格</th>
+                            <th>销量</th>
+                            <th>
+                                删除
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in books %}
+                        <tr>
+                            <th scope="row">{{obj.i}}</th>
+                            <td>
+                                <a href="/query/book_details?id={{obj.num}}" target="_blank">
+                                    <div class="img ">
+                                    <img src="/../static/ddimage/dd/{{obj.img}}">
+                                    </div>
+                                </a>    
+                            </td>
+                            <td></br></br><a class="name" href="/query/book_details?id={{obj.num}}" target="_blank" style="text-decoration:none;color: black;">{{obj.name}}</a></td>
+                            <td></br></br>{{obj.num}}</td>
+                            <td></br></br>{{obj.author}}</td>
+                            <td></br></br>{{obj.price}}</td>
+                            <td></br></br>{{obj.sales}}</td>
+                            <td></br></br><a class="btn-danger btn-xs" href="/collect/delete/?id={{obj.num}}">删除</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="../static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css"> 
+    <style>
+        body {
+            background: url(../static/img/4.jpg) no-repeat;
+            background-size: cover;
+        }
+        .sname :hover{
+            color: red;
+        }
+        .navbar-brand {
+            font-size: x-large;
+        }
+
+        .nav navbar-nav {
+            font-size: larger;
+        }
+
+        .swiper {
+            width: auto;
+            height: auto;
+            margin: 50px auto;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: rgb(0, 8, 8);
+            width: 10px;
+            height: 10px;
+
+        }
+        .swiper-wrapper{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                </button>
+
+                <a class="navbar-brand" href="/index/">图书管理系统</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/rank/">畅销榜单</a></li>
+                    <li><a href="/collect/">我的收藏</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" method="post">
+                    <div class="form-group">
+                        <input type="text" name="bookname" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="">热门搜索：</a></li>
+                    {% for book in books %}
+                        <li class="sname"><a style="padding-left: 0px;" class="sname" href="/query?name={{book.name}}">{{book.name}}</a></li>
+                    {%endfor%}
+                </ul>
+               
+                <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+                    <li><a id="username" style="margin-right: 30px;">欢迎你，{{name}}</a></li>
+                    <li><a href="/login">注销</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="swiper">
+            <!-- 图片 -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img style="border-radius: 30px;" src="../static/img/01.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="../static/img/02.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img style="border-radius: 30px;" src="../static/img/03.jpg" alt="" />
+                </div>
+            </div>
+            <!-- 如果需要分页器  小圆点  -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮  上一张  下一张 
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>-->
+        </div>
+
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.js"> </script>
+
+        <script>
+            var mySwiper = new Swiper(".swiper", {
+                autoplay: {
+                    delay: 2000,
+                },
+                loop: true, // 循环模式选项
+                //effect: 'cards',//设置切换的方式
+
+                // 如果需要分页器
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,//设置小圆点点击切换图片
+                },
+
+
+                /*navigation: 
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },*/
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<title>图书信息管理系统 | 注册</title>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/register.css" />
+<style>
+    body{
+            background: url(../static/img/4.jpg) no-repeat;
+            background-size: cover;
+        }
+</style>
+</head>
+
+<body class="register">
+    <div id="container" >
+        <div id="header" ;>
+            <div id="branding" >
+                <h1 id="site-name" style="text-align:center;color: black;"><a >欢迎注册</a></h1>
+                <a id="hint" style="color: crimson;">{{hint}}</a>
+            </div>
+        </div>
+        <div id="content" class="colM">
+            <div id="content-main">
+                <form action="/register/" method="post" id="login-form">
+                    <!--<input type='hidden' name='csrfmiddlewaretoken' value='ioPtn4aAO8W5MbgTylZI6KPyBFh4qe3UP1tbJxdDBIsj41sJqybX4EvzXTbmQfrB' />-->
+                    <div class="form-row">
+                        <label class="required" for="id_username">用户名:</label>
+                        <input type="text" name="username" autofocus maxlength="254" required id="id_username" />
+                    </div>
+                    <div class="form-row">
+                        <label class="required" for="id_password">密码:</label>
+                        <input type="password" name="password" required id="id_password" />
+                        <input type="hidden" name="next" value="/index/" />
+                    </div>
+                    <div class="submit-row">
+                        <label>&nbsp;</label><input type="submit" name="register" value="注册" />
+                    </div>
+                    <div id="tools">
+                        已有账号？<a href="/login">登录</a>
+                    </div>
+                </form>
+            </div>
+            <br class="clear" />
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

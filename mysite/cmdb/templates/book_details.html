@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详细信息</title>
+    <link rel="stylesheet" type="text/css" href="/../static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/../static/css/book_details.css" />
+    <link rel="stylesheet" href="/../static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <style>
+        body{
+                background: url(/../static/img/4.jpg) no-repeat ;
+                background-size: cover;
+                
+            }
+    </style>
+</head>
+<body>
+    <div container>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                </button>
+
+                <a class="navbar-brand" href="#">查询结果</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+                    <li><a href="/index">返回主页</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <ol>
+        <div class="book_info">
+            <div class="img">
+                <a href="{{book.website}}">
+                <img width="320" height="320"  src="/../static/ddimage/dd/{{book.img}}"  alt="图片"><br/></a>
+            </div>
+            <div class="info">
+                
+                <h1 class="book_name" href="#">{{book.name}}</h1>
+                
+                <br/>
+                <a class="book_price">价格：{{book.price}}</a>
+                <br/>
+                <br/>
+                <span>作者: {{book.author}}</span>
+                <br/>
+                <br/>
+                <span>ISBN: {{book.ISBN}}</span>
+                <br/>
+                <br/>
+                <a class="book_web" href="{{book.website}}">来源：{{book.website}}</a>
+            </div>
+        </div>
+        
+        <div class="comment">
+                <div class="comment1" >部分评论：</div>
+                <br/>   
+        
+        <div style="clear:both;"></div>
+    </div>
+    </ol>
+    <div style="clear:both;"></div>
+    
+        <div class="comment2">
+            {{book.comment1}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment2}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment3}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment4}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment5}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment6}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment7}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment8}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment9}}
+        </div>
+        <br/>
+        <div class="comment2">
+            {{book.comment10}}
+        </div>
+        <br/>
+        <div class="wrapper">
+            <span class="line"></span>
+            <span class="content">我是有底线的</span>
+            <span class="line"></span>
+        </div>
+</div>
+</body>
+</html>
+
